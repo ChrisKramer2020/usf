@@ -7,13 +7,41 @@ html {
   text-size-adjust: 100%;
 }
 
+.background-image {
+  background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG');
+  background-size: cover;
+  display: block;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  height: 800px;
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+}
+
+.content {
+  // background: rgba(255, 255, 255, 0.35);
+  border-radius: 3px;
+  // box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  top: -20px;
+  left: 0;
+  position: fixed;
+  margin-left: 20px;
+  margin-right: 20px;
+  right: 0;
+  z-index: 2;
+  padding: 0 10px;
+}
+
 body {
   @include font-smoothing(on);
   margin: 0;
   font: $base-text-size / 1 $base-font-family;
-  background-image: url('https://wallpaperscraft.com/image/new_york_city_street_traffic_people_cars_buildings_47942_3840x2160.jpg');
-  background-size: contain;
-  
+  // background-image: url('https://wallpaperscraft.com/image/new_york_city_street_traffic_people_cars_buildings_47942_3840x2160.jpg');
+  // background-size: contain;
+
 }
 
 html, body {
@@ -30,7 +58,7 @@ body {
   display: inline-block;
   overflow: hidden;
   margin: 10px 8px;
-  top: 200px;
+  top: 100px;
   min-width: 230px;
   max-width: 315px;
   width: 100%;
@@ -154,4 +182,36 @@ body {
   flex-direction: row;
   display: flex;
   justify-content: space-between;
+}
+
+#footer {
+  background-color: black;
+  padding: 30px;
+  position: relative;
+  top: 800px;
+  overflow: visible;
+}
+
+#dew {
+  margin-bottom: 25px;
+}
+#thanks {
+  color: white;
+  position: relative;
+  top: 250px;
+  overflow: visible;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 3s ease-in-out;
+    :hover {
+      transform: scale(1.1);
+      transition: transform 3s ease-in-out;
+
+    }
+}
+
+li {
+  list-style-type: none;
 }

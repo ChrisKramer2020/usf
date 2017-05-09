@@ -17,7 +17,7 @@ html {
   left: 0;
   position: fixed;
   right: 0;
-  z-index: 1;
+  z-index: -1;
 }
 
 .content {
@@ -47,7 +47,9 @@ body {
 a {
   text-decoration: none;
   list-style-type: none;
-  color: #00ASCC;
+    :hover {
+      color: rgb(27,28,99);
+    }
 }
 
 html, body {
@@ -55,6 +57,15 @@ html, body {
 }
 body {
 
+}
+
+#image {
+
+  @media screen and (max-width: 360px), (max-width: 412px){
+    z-index: -2;
+    position: relative;
+    margin-bottom: -75px;
+  }
 }
 
 @import url(https://fonts.googleapis.com/css?family=Raleway);
@@ -100,6 +111,7 @@ body {
   align-content: center;
   flex-direction: column;
   display: flex;
+
 }
 .snip1584 figcaption {
   position: absolute;
@@ -216,6 +228,7 @@ body {
   flex-direction: column;
   align-items: center;
   transition: transform 1s ease-in-out;
+  left: -5px;
     :hover {
       transform: scale(1.1);
       transition: transform 1s ease-in-out;
@@ -231,23 +244,17 @@ li {
 
 }
 
-header {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  width: 100%;
-  margin: auto;
-  height: 50px;
-  list-style-type: none;
-  border-bottom: 1px solid #EEE;
-}
-
 #brand {
   float: left;
   line-height: 50px;
-  color: #E5DAC0;
-  font-size: 25px;
+  color: rgb(28, 47, 21);
+  padding: 1px;
+  font-family: 'Cutive', serif;
+  font-size: 44px;
+  z-index: 2;
   font-weight: bolder;
+  margin-top: 5px;
+  direction: rtl;
 }
 
 nav {
@@ -261,9 +268,19 @@ nav {
     a {
       display: block;
       padding: 15px 0;
-      border-bottom: 1px solid #C3AA6E;
+      border-bottom: 1px solid #fff;
       color: #F0EADC;
     }
+
+    @media screen and (max-width: 360px) {
+      // width: 360px;
+      flex: 1;
+      position: relative;
+      left: -260px;
+      flex-direction: column;
+      display: flex;
+      }
+
 }
 
 nav li:last-child a {
@@ -277,37 +294,71 @@ nav a :hover {
 .menu {
   width: 240px;
   height: 100%;
+  top: 60px;
   position: absolute;
-  background: #D9C9A3;
+  background: rgb(0, 0, 0);
   left: -260px;
   transition: all .3s ease-in-out;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   -ms-transition: all .3s ease-in-out;
+    @media screen and (max-width: 360px), (max-width: 414px), (max-width: 512px) {
+      // width: 360px;
+      flex: 1;
+      flex-direction: column;
+      z-index: 999;
+      height: 90%;
+      display: flex;
+    }
 
 }
 
 .menu-icon {
-  padding: 10px 20px;
-  background: #E5DAC0; color: #987D3E;
+  padding: 10px 15px;
+  background: rgb(22,33,33); color: #fff;
+  margin-bottom: 4px;
   cursor: pointer;
   float: right;
   overflow: visible;
-  z-index: 1;
+  bottom: 5px;
+  z-index: 3;
   position: relative;
-  margin-top: 4px;
+  margin-top: 15px;
+  margin-right: 5px;
   border-radius: 5px;
 }
 
 #menuToggle {
   display: none;
-  z-index: 1;
-  position: relative;
+  z-index: 999;
+  position: absolute;
 }
 
 #menuToggle:checked ~ .menu {
-  position: absolute;
   left: 0;
-  z-index: 1;
-  position: relative;
+  z-index: 999;
+  font-family: 'Cutive', serif;
+  font-size: 24px;
+  position: absolute;
+  text-decoration: none;
+  color: #fff;
+    :hover {
+      color: rgb(66,99,129);
+      text-decoration: none;
+    }
+  @media screen and (max-width: 360px),(max-width: 375px),(max-width: 414px) {
+    width: 100%;
+    height: 60%;
+    font-family: 'Cutive', serif;
+    align-content: center;
+    align-items: center;
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+    z-index: 999;
+  }
 }
+
+// #aLink:checked ~ .menu {
+//
+// }
